@@ -18,7 +18,7 @@ public class UserInfoController {
     }
 
     @GetMapping("/{userId}")
-    @PreAuthorize("hasAuthority('ROLE_ADMIN','ROLE_USER')")
+    @PreAuthorize("hasAnyAuthority('ROLE_ADMIN','ROLE_USER')")
     public ResponseEntity<?> getUser(@PathVariable Long userId){
         return service.getUser(userId);
     }
