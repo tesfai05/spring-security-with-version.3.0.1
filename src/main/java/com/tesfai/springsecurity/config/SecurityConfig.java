@@ -34,7 +34,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests().requestMatchers("/products/**", "/users/**")
                 .authenticated()
                 .and()
-                .formLogin()
+                .httpBasic()
                 .and()
                 .build();
     }
